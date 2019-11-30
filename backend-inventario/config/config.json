@@ -1,0 +1,23 @@
+{
+
+    "development": {
+        "config_id": "DESARROLLO",
+        "node_port": 3001,
+        "database": "mongodb+srv://admin:admin@sistemas-distribuidos-cluster-ccpsc.mongodb.net/test?retryWrites=true&w=majority",
+        "jwt_code": "este-es-el-seed-desarrollo"
+    },
+
+    "testing": {
+        "config_id": "TESTING",
+        "database": "postgres://u_antisoborno:antisobornoqp2019@172.16.179.243:5432/qp_antisoborno",
+        "node_port": 3001,
+        "jwt_code": "este-es-el-seed-desarrollo"
+    },
+
+    "production": {
+        "config_id": "PRODUCCIÓN",
+        "node_port": 8080,
+        "database": "mongodb://localhost:27017/inventariodb",
+        "jwt_code": "este-es-el-seed-desarrollo"
+    }
+}

@@ -1,0 +1,48 @@
+.sidenav-container {
+    position: absolute;
+    top: 57px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+
+.example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: rgb(248, 246, 246);
+    -webkit-box-shadow: 2px -1px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px -1px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px -1px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.example-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #ccc;
+    color: black;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 60%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+* {
+    outline: none;
+    border: 0;
+}

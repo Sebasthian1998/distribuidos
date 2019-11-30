@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light mat-elevation-z2 example-header" style=" text-align: center; background: #3f51b5; color: white">
+    <a mat-button (click)="sidenav.toggle()"><i style="color:white" class="material-icons">
+            menu
+        </i>
+    </a>
+    <a mat-button class="navbar-brand mat-button" href="#">
+        <span style="color: white; font-size: 1.3em"><i class="material-icons docs-angular-logo">important_devices</i>
+            Sistema de Inventario </span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 4">
+        <ul class="navbar-nav mr-auto" style="color: white">
+            <li class="nav-item">
+                <a class="nav-link"><span style="color: white" class="mat-button-wrapper">Components</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><span style="color: white" class="mat-button-wrapper">CDK</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <span style="color: white" class="mat-button-wrapper">Help</span>
+                </a>
+            </li>
+        </ul>
+    </div> -->
+</nav>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+        <hr>
+        <div style="height: 230px;" class="text-center">
+            <p class="mt-1">Bienvenido</p>
+            <label for="file-input">
+                <img src="../../../assets/user.png" alt="" width="64px" style="cursor: pointer; border-radius: 72px; width:72px; height:72px" *ngIf="!empleado.img"> 
+                <img src="{{url+'/get-image/'+empleado.img}}" alt="" width="64px" style="cursor: pointer; border-radius: 72px; width:72px; height:72px" *ngIf="empleado.img" /></label>
+            <input id="file-input" name="foto" type="file" style="display: none" (change)="fileChangeEvent($event)" />
+            <p>{{empleado.nombres}} {{empleado.apellidos}}</p>
+            <button mat-raised-button color="warn" (click)="logout()">Cerrar Sesión</button>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-toolbar style="background: white">
+            <mat-toolbar-row [routerLink]="[ '/home/productos']" routerLinkActive="active-link">
+                <span>Productos </span>
+                <span class="example-spacer"></span>
+                <i class="material-icons ">local_offer</i>
+            </mat-toolbar-row>
+            <mat-toolbar-row [routerLink]="[ '/home/proveedores']" routerLinkActive="active-link">
+                <span>Proveedores</span>
+                <span class="example-spacer"></span>
+                <i class="material-icons">
+                    accessibility
+                </i>
+            </mat-toolbar-row>
+            <mat-toolbar-row [routerLink]="[ '/home/balances']" routerLinkActive="active-link">
+                <span>Balances</span>
+                <span class="example-spacer"></span>
+                <i class="material-icons">
+                    trending_up
+                </i>
+            </mat-toolbar-row>
+            <mat-toolbar-row [routerLink]="[ '/home/reportes']" routerLinkActive="active-link">
+                <span>Reportes</span>
+                <span class="example-spacer"></span>
+                <i class="material-icons">assignment</i>
+            </mat-toolbar-row>
+            <mat-toolbar-row id="btn-empleados" [routerLink]="[ '/home/empleados']" routerLinkActive="active-link">
+                <span>Empleados</span>
+                <span class="example-spacer"></span>
+                <i class="material-icons">how_to_reg</i>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-divider></mat-divider>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+        <!-- <div class="example-footer">
+            Taller de Construcción de Sistemas - 2019
+        </div> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

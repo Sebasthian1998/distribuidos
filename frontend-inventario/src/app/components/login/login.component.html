@@ -1,0 +1,51 @@
+<div class="bg-modal">
+
+    <div class="modal-contents">
+        <div class="titulo">
+            <div class="logo align-middle" style="position:relative">
+                <span style="position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 50%;
+                height: 30%;
+                margin: auto;
+                font-size: 1.9em"><i class="material-icons ">important_devices</i> NoraTCS </span>
+            </div>
+            <div class="descripcion" style="color: white">
+                USER LOGIN
+            </div>
+        </div>
+        <div class="contenido mt-4">
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input id="correo" matInput formControlName="correo" required>
+                    <mat-error></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="">
+                    <mat-label>Contraseña</mat-label>
+                    <input id="password" matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                    <mat-icon style="cursor:pointer" matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-hint align="end" *ngIf="expression">Here's the dropdown arrow ^</mat-hint>
+                </mat-form-field>
+
+                <div class="form-group mt-4">
+                    <button id="btn-submit" mat-raised-button color="primary">Iniciar Sesión</button>
+                </div>
+
+            </form>
+        </div>
+        <br>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted"> 2019 </span>
+        </div>
+    </footer>
+</div>

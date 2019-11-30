@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+* {
+    outline: none;
+    border: 0;
+}
+
+.modal-backdrop .show {
+    display: none !important;
+}
